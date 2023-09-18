@@ -4,7 +4,7 @@ public class LinkedList<T> implements ILinkedList<T> {
     Node<T> head;
     Integer size;
 
-    public LinkedList(){
+    public LinkedList() {
         this.head = null;
         this.size = 0;
     }
@@ -19,11 +19,21 @@ public class LinkedList<T> implements ILinkedList<T> {
         }
     }
 
+
     @Override
-    public void add(Object data) {
-
+    public void add(T data) {
+        Node<T> newNode = new Node<>(data);
+        if (this.head == null) {
+            this.head = newNode;
+        } else {
+            var currentNode = this.head;
+            while (currentNode.next != null) {
+                currentNode = currentNode.next;
+            }
+            currentNode.next = newNode;
+        }
+        this.size++;
     }
-
 
     @Override
     public boolean remove(Object data) {
