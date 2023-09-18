@@ -47,11 +47,11 @@ public class LinkedList<T> implements ILinkedList<T> {
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return this.size == 0;
     }
 
     @Override
     public int size() {
-        return 0;
+        return this.size;
     }
 }
