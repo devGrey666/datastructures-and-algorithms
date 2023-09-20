@@ -36,8 +36,18 @@ public class LinkedList<T> implements ILinkedList<T> {
     }
 
     @Override
-    public boolean remove(Object data) {
+    public boolean remove(T data) {
         return false;
+    }
+
+    public void display() {
+        var currentNode = this.head;
+        while (currentNode.next != null) {
+            System.out.print(currentNode.data + " -> ");
+            currentNode = currentNode.next;
+        }
+        System.out.print(currentNode.data);
+        System.out.println(", Size : "+ this.size);
     }
 
     @Override
